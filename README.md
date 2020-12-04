@@ -58,7 +58,8 @@ Coleta de dados no google news com Python
 
 ## :minidisc: Resultado:
 
-![resultado](https://user-images.githubusercontent.com/17969551/101181933-3b858880-362c-11eb-919f-a185fec9ead8.png)
+![resultado](https://user-images.githubusercontent.com/17969551/101183881-d0898100-362e-11eb-851b-7eec060f56d5.png)
+
 
 Exemplo de resultado no json:
 
@@ -81,3 +82,7 @@ Exemplo de resultado no json:
     }
 ]
 ```
+
+Exemplo de resultado no txt:
+
+![r](https://user-images.githubusercontent.com/17969551/101183978-edbe4f80-362e-11eb-966c-65d3623a43a4.png)
