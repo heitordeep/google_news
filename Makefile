@@ -21,17 +21,14 @@ clean:  ## Clean python bytecodes, optimized files, cache, coverage...
 	@find . -name ".pytest_cache" -type d | xargs rm -rf
 	@echo 'Temporary files deleted'
 
-# ------ Installation requirements ------ 
+# ------ Installation requirements ------
 
 requirements: ## Install project packages system
 	@pip install --upgrade pip
-	@pip install -r requirements/requirements.txt 
+	@pip install -r requirements/requirements.txt
 
-xml: clean ## Get xml data from Google news. 
+xml: clean ## Get xml data from Google news.
 	@python control/google_news.py
 
 crawl: clean ## Crawl google site.
 	@python control/crawl_google_news.py $(word)
-
-transform_txt: clean ##
-	@python control/html_to_txt_json.py $(word)
