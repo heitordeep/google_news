@@ -68,7 +68,7 @@ def main():
         print(f'Procurando por {word} no google news...')
         data = get_news(url)
         save(word, data)
-        print('Dados salvo com sucesso\n')
+        print('Dados salvo com sucesso.\n')
 
 
 if __name__ == '__main__':

@@ -18,9 +18,9 @@ Coleta de dados no google news com Python
         }
     ]
     ```
-    
+
     Multiplas pesquisas:
-    
+
     ```javascript
     [
         {
@@ -50,13 +50,15 @@ Coleta de dados no google news com Python
     ```
 
 - Após configurar a pesquisa, basta digitar:
-  - Linux: ```$ make xml```
-  - Windows: ```$ python control/google_news.py```
-  
-  
+  - XML: Busca dados em xml no google news rss.
+  - CRAWL: Busca dados direto no site do Google noticias.
+  - Linux: ```$ make xml``` ou ```make crawl word=paravra```
+  - Windows: ```$ python control/google_news.py``` ou ```$ python control/crawl_google_news.py palavra```
+
+
 ## :minidisc: Resultado:
 
-![resultado](https://user-images.githubusercontent.com/17969551/101181933-3b858880-362c-11eb-919f-a185fec9ead8.png) 
+![resultado](https://user-images.githubusercontent.com/17969551/101181933-3b858880-362c-11eb-919f-a185fec9ead8.png)
 
 Exemplo de resultado no json:
 
@@ -79,5 +81,3 @@ Exemplo de resultado no json:
     }
 ]
 ```
-
-

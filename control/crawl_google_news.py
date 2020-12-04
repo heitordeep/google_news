@@ -1,4 +1,4 @@
-from datetime import datetime as dt
+from datetime import datetime
 from json import dumps
 from os import makedirs, path
 from sys import argv
@@ -9,15 +9,17 @@ from requests.exceptions import HTTPError
 
 allowed_url = 'https://www.google.com'
 
-today = dt.now().strftime('%Y%m%d')
-
 
 def save(word, title, link):
+    year = datetime.now().strftime('%Y')
+    month = datetime.now().strftime('%m')
+    day = datetime.now().strftime('%d')
+
     makedirs(
-        path.join('raw', today), exist_ok=True
+        path.join('raw', year, month, day), exist_ok=True
     )  # Create raw/date directory.
     with open(
-        path.join('raw', today, f'links_{word}_crawl.txt'),
+        path.join('raw', year, month, day, f'links_{word}_crawl.txt'),
         'a',
         encoding='utf-8',
     ) as f:
@@ -56,7 +58,7 @@ def main(word, allowed_url):
             if number_page == 300:
                 has_link = False
         except HTTPError as e:
-            print(e)
+            raise SystemExit(e)
             break
 
 
@@ -64,6 +66,8 @@ if __name__ == "__main__":
     params = argv[1::]
     if params:
         for word in params:
+            print(f'Buscando {word} no google noticias...')
             main(word, allowed_url)
+            print('Dados salvo com sucesso.')
     else:
         print('Nenhum parâmetro foi passado!')
